@@ -1,0 +1,25 @@
+{
+  "name": "deptrackupload-github-action",
+  "version": "1.0.0",
+  "description": "Github Action for OWASP Dependency-Track",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/droid42/deptrackupload-github-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/droid42/deptrackupload-github-action/issues"
+  },
+  "homepage": "https://github.com/droid42/deptrackupload-github-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "formdata-node": "^4.3.2",
+    "node-fetch-commonjs": "^3.1.1"
+  }
+}
