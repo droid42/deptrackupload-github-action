@@ -53,7 +53,7 @@ Use with `projectName` and `projectVersion`:
 
 ```yaml
     - name: Upload bom to dependency-track instance
-      uses:  droid42/deptrackupload-github-action@v1
+      uses:  droid42/deptrackupload-github-action@v2
       id: deptrack
       with:
         serverUrl: 'https://deptrack.myhost.org/api/v1/bom'
@@ -70,7 +70,7 @@ Use with `project` (UUID):
 
 ```yaml
     - name: Upload bom to dependency-track instance
-      uses:  droid42/deptrackupload-github-action@v1
+      uses:  droid42/deptrackupload-github-action@v2
       id: deptrack
       with:
         serverUrl: 'https://deptrack.myhost.org/api/v1/bom'
