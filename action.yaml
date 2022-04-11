@@ -11,9 +11,12 @@ inputs:
     description: 'bom-file including path'
     required: true
   project:
+    description: 'project uuid'
+    required: true
+  projectName:
     description: 'name of the project'
     required: true
-  version:
+  projectVersion:
     description: 'project version'
     required: true
   autoCreate:

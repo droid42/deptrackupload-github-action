@@ -9,8 +9,18 @@ try {
   const apiKey = core.getInput('apiKey');
   const bomFile = core.getInput('bomFile');
   const project = core.getInput('project');
-  const version = core.getInput('version');
+  const projectName = core.getInput('projectName');
+  const projectVersion = core.getInput('projectVersion');
   const autoCreate = core.getInput('autoCreate');
+
+  const nameVersion = projectName != "" && projectVersion != "";
+
+  if (project == "" && !nameVersion) {
+    throw new Error('One of project OR (projectName and projectVersion) must be set');
+  }
+  if (project != "" && nameVersion) {
+    throw new Error('Either project XOR (projectName and projectVersion) must be set');
+  }
 
   console.log(`POSTing to ${serverUrl}!`);
 
@@ -29,8 +39,12 @@ try {
       const formData = new FormData.FormData();
       formData.append('bom', await fileFromPath(bomFile), 'bom.xml');
       formData.set('autoCreate', autoCreate)
-      formData.set('projectName', project)
-      formData.set('projectVersion',version)
+      if (project != "") {
+        formData.set('project', project)
+      } else {
+        formData.set('projectName', projectName)
+        formData.set('projectVersion', projectVersion)
+      }
 
       const response = await fetch(serverUrl,
         {
